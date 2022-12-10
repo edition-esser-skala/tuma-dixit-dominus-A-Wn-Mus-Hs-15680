@@ -1,7 +1,7 @@
 \version "2.22.0"
 
 \include "../definitions.ly"
-#(define option-instrument-name "b")
+#(define option-instrument-name "fag")
 \include "score_settings/one-staff.ly"
 
 \book {
@@ -12,10 +12,11 @@
     \score {
       <<
         \new Staff {
-          \set Staff.instrumentName = "Bassi"
-          \DixitOrgano
+          \set Staff.instrumentName = "Fagotto"
+          \DixitFagotto
         }
       >>
     }
+    \tacet "Tecum principium"
   }
 }

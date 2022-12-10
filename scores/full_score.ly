@@ -5,86 +5,88 @@
 
 \book {
   \bookpart {
-    \section "1" "First"
+    \section "Dixit Dominus"
     \addTocEntry
     \paper { indent = 3\cm }
     \score {
       <<
         \new StaffGroup <<
+          \new Staff {
+            \set Staff.instrumentName = "Cornetto"
+            \DixitCornetto
+          }
+          \new Staff {
+            \set Staff.instrumentName = "Fagotto"
+            \DixitFagotto
+          }
+        >>
+        \new StaffGroup <<
+          \new Staff \with { \smallStaffDistance } {
+            \set Staff.instrumentName = \transposedName "Clarino I, II" "C" ""
+            \partCombine #'(0 . 10) \DixitClarinoI \DixitClarinoII
+          }
           \new GrandStaff <<
-            \set GrandStaff.instrumentName = "Oboe"
+            \set GrandStaff.instrumentName = "Trombone"
             \new Staff {
               \set Staff.instrumentName = "I"
-              \xxxOboeI
+              \DixitTromboneI
             }
             \new Staff {
               \set Staff.instrumentName = "II"
-              \xxxOboeII
+              \DixitTromboneII
             }
-          >>
-        >>
-        \new StaffGroup <<
-          \new Staff <<
-            \set Staff.instrumentName = \transposedName "Clarino I, II" "C" ""
-            % \transpose c c
-            \partCombine \xxxClarinoI \xxxClarinoII
           >>
         >>
         \new Staff {
           \set Staff.instrumentName = \transposedTimp "C" "" "G" ""
-          % \transpose c c
-          \xxxTimpani
+          \DixitTimpani
         }
         \new StaffGroup <<
-          \new GrandStaff \with { \smallGroupDistance } <<
+          \new GrandStaff <<
             \set GrandStaff.instrumentName = "Violino"
             \new Staff {
               \set Staff.instrumentName = "I"
-              \xxxViolinoI
+              \DixitViolinoI
             }
             \new Staff {
               \set Staff.instrumentName = "II"
-              \xxxViolinoII
+              \DixitViolinoII
             }
           >>
-          \new Staff {
-            \set Staff.instrumentName = "Viola"
-            \xxxViola
-          }
         >>
         \new ChoirStaff <<
           \new Staff {
             \incipitSoprano
-            \new Voice = "Soprano" { \dynamicUp \xxxSoprano }
+            \new Voice = "Soprano" { \dynamicUp \DixitSoprano }
           }
-          \new Lyrics \lyricsto Soprano \xxxSopranoLyrics
+          \new Lyrics \lyricsto Soprano \DixitSopranoLyrics
 
           \new Staff {
             \incipitAlto
-            \new Voice = "Alto" { \dynamicUp \xxxAlto }
+            \new Voice = "Alto" { \dynamicUp \DixitAlto }
           }
-          \new Lyrics \lyricsto Alto \xxxAltoLyrics
+          \new Lyrics \lyricsto Alto \DixitAltoLyrics
 
           \new Staff {
             \incipitTenore
-            \new Voice = "Tenore" { \dynamicUp \xxxTenore }
+            \new Voice = "Tenore" { \dynamicUp \DixitTenore }
           }
-          \new Lyrics \lyricsto Tenore \xxxTenoreLyrics
+          \new Lyrics \lyricsto Tenore \DixitTenoreLyrics
 
           \new Staff {
             \set Staff.instrumentName = "Basso"
-            \new Voice = "Basso" { \dynamicUp \xxxBasso }
+            \new Voice = "Basso" { \dynamicUp \DixitBasso }
           }
-          \new Lyrics \lyricsto Basso \xxxBassoLyrics
+          \new Lyrics \lyricsto Basso \DixitBassoLyrics
         >>
         \new StaffGroup <<
           \new Staff {
             \set Staff.instrumentName = \markup \center-column { "Organo" "e Bassi" }
             % \transpose c c,
-            \xxxOrgano
+            \DixitOrgano
           }
         >>
-        \new FiguredBass { \xxxBassFigures }
+        \new FiguredBass { \DixitBassFigures }
       >>
       \layout { }
       \midi { \tempo 4 = 90 }
