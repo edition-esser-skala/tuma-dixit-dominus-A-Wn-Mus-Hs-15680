@@ -9,7 +9,7 @@
   \bookpart {
     \section "Dixit Dominus"
     \addTocEntry
-    \paper { indent = 2\cm }
+    \paper { indent = 2\cm page-count = #2 }
     \score {
       <<
         \new StaffGroup <<

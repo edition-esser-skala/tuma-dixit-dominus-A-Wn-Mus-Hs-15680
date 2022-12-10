@@ -17,6 +17,5 @@
         }
       >>
     }
-    \tacet "Tecum principium"
   }
 }
